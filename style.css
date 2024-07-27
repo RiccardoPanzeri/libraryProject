@@ -24,6 +24,18 @@ body{
     
 }
 
+.deleteButton{
+    width: fit-content;
+    height: 20px;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.readButton{
+
+}
+
 
 
 
@@ -34,7 +46,7 @@ body{
     grid-row: 2/-1;
     grid-column: 1/3;
     border-radius: 10px;
-    grid-template-rows: auto;
+    grid-template-rows: min-content;
     grid-auto-rows:auto;
     
     align-items: stretch;
@@ -47,7 +59,7 @@ body{
     
     
 }
-.bookContainer{
+.bookContainer, .bookHeader{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     grid-column:1/2;
@@ -84,6 +96,6 @@ body{
     grid-template-rows: repeat(8, 1fr);
 }
 
-#submit{
+.formButton{
     margin-top: 20px;
 }

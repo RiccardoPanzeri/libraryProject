@@ -13,7 +13,7 @@
     <h1 class="mainTitle">Library</h1>
         <button type="button" id="addButton" class="button">Aggiungi Libro</button>
         <div class="tableContainer">
-            <div class="bookContainer">
+            <div class="bookHeader">
                 <h4>ID</h4>
                 <h4>Titolo</h4>
                 <h4>Autore</h4>
@@ -32,8 +32,9 @@
                     <label for="autore">Autore: </label>
                     <input type="text" id="autore" name="autore" required>
                     <label for="nPagine" >Numero Pagine: </label>
-                    <input type="number" id="nPagine" name="nPagine" required>
-                    <button type="submit" id="submit">Aggiungi</button>
+                    <input type="number" id="nPagine" name="nPagine" min="1" required>
+                    <button type="submit" id="submit" class="formButton">Aggiungi</button>
+                    <button type="submit" id="cancel" class="formButton">cancel</button>
                 </div>
 
                 
