@@ -78,7 +78,15 @@ function mostraLibri(){
             
         }
 
-        let read = document.createElement("button")
+        let read = document.createElement("img");
+        if(libro.isLetto === "No"){
+        read.setAttribute("src", "./eye-check.svg");
+        }else if(libro.isLetto === "Sì"){
+            read.setAttribute("src", "./eye-remove.svg");
+        }
+        read.classList.add("readButton");
+        read.setAttribute("data-id", libro.id);
+        contenitore.appendChild(read);
 
         let cancella = document.createElement("img");
         cancella.setAttribute("src","./delete-empty.svg");
@@ -160,4 +168,27 @@ tabellaLibri.addEventListener("click", (e)=>{
 
 
 
+});
+
+
+tabellaLibri.addEventListener("click",(e)=>{
+    target = e.target;
+    function setLetto(libro){
+        if(libro.isLetto === "Sì" && libro.id ===target.getAttribute("data-id")){
+            libro.isLetto = "No";
+            target.setAttribute("src", "./eye-remove.svg");
+        }else if(libro.isLetto === "No" && libro.id ===target.getAttribute("data-id")){
+            libro.isLetto = "Sì";
+            target.setAttribute("src", "./eye-check.svg");
+        }
+    }
+    
+    if(target.classList.contains("readButton")){
+        
+        libreria.map(setLetto);
+
+        }
+
+        mostraLibri();
+    
 });

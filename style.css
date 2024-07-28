@@ -33,9 +33,15 @@ body{
 
 
 .readButton{
-
+    width: fit-content;
+    height: 20px;
+    align-self: center;
+    justify-self: center;
 }
 
+.readButton:hover, .deleteButton:hover{
+    cursor: pointer;
+}
 
 
 
