@@ -23,6 +23,8 @@ const divinaCommedia = new Libro( "A001", "La Divina Commedia", "Dante Alighieri
 const libro2 = new Libro( "A002", "ciao", "mondo", 700, false);
 
 libreria.push(divinaCommedia);
+libreria.push(divinaCommedia);
+libreria.push(divinaCommedia);
 
 mostraLibri();
 

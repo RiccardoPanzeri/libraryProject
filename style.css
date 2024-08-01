@@ -1,8 +1,28 @@
 
+@font-face {
+    font-family: 'blackchanceryregular';
+    src: url('./blkchcry-webfont.woff2') format('woff2'),
+         url('./blkchcry-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
+
+@font-face {
+    font-family: 'cat_childsregular';
+    src: url('./catchilds-webfont.woff2') format('woff2'),
+         url('./catchilds-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 :root{
     --brownBG: rgb(102, 52, 17);
+    --blackShadow:  2px 2px 0 black,  
+    -2px -2px 0 black, 
+    -2px 2px 0 black,  
+    2px -2px 0 black;  
 
 }
 
@@ -14,8 +34,10 @@ body{
     display: grid;
     grid-template-columns: 5fr 1fr;
     grid-template-rows: 1fr 5fr;
-    
-    background-color: mediumspringgreen;
+    min-width: 500px;
+    background-image: url("./star-2703517_1280.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
     
     
     
@@ -23,6 +45,7 @@ body{
    
     
 }
+
 
 .deleteButton{
     width: fit-content;
@@ -56,17 +79,20 @@ body{
     border-radius: 10px;
     grid-template-rows: min-content;
     grid-auto-rows:auto;
-    
+    border: rgb(168, 139, 101) solid 5px;
     align-items: stretch;
     justify-items: center;
     margin: 50px;
     padding: 10px;
-    
+    background-image:url("./paper-1074131_1280.jpg") ;
+    background-size: cover;
    
     
     
     
 }
+
+
 .bookContainer, .bookHeader{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
@@ -76,10 +102,20 @@ body{
     justify-self: stretch;
     justify-items: center;
     align-items: baseline;
-    
+    border-radius: 5px;
     text-align: center;
-    border: white dotted 1px;
-    background-color: bisque;
+    font-family: "cat_childsregular", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 0 rgb(255, 255, 255),  
+    -1px -1px 0 rgb(255, 242, 242), 
+    -1px 1px 0 rgb(253, 239, 239),  
+    1px -1px 0 rgb(255, 244, 244); 
+    
+
+}
+
+.bookContainer{
+    border: outset;
 }
 
 .mainTitle{
@@ -88,15 +124,32 @@ body{
     align-self: center;
     text-align: center;
     margin-left: 20%;
+    font-family: "blackchanceryregular", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 5rem;
+    color: blanchedalmond;
+    text-shadow: var(--blackShadow);
+   
 }
 
 #addButton{
    grid-column: 2;
     grid-row: 1;
-    width: 100px;
-    height: 50px;
+    width: auto;
+    height: auto;
     align-self: end;
     justify-self: start;
+    border-radius: 10px;
+    font-family: "blackchanceryregular", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    background-color: black;
+    color:antiquewhite;
+    border-color: antiquewhite;
+    margin-left: 3px;
+}
+
+#addButton:hover{
+    cursor: pointer;
+    font-size: 1.8rem;
 }
 
 .inputContainer{
