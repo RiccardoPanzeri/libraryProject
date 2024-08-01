@@ -20,11 +20,11 @@ const cancelButton = document.querySelector("#cancel");
 
 const divinaCommedia = new Libro( "A001", "La Divina Commedia", "Dante Alighieri", 700, true);
 
-const libro2 = new Libro( "A002", "ciao", "mondo", 700, false);
+const braveNewWorld = new Libro( "A002", "Brave New World", "Aldous Huxley", 400, false);
 
 libreria.push(divinaCommedia);
-libreria.push(divinaCommedia);
-libreria.push(divinaCommedia);
+libreria.push(braveNewWorld);
+
 
 mostraLibri();
 
