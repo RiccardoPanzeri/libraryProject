@@ -1,16 +1,59 @@
 //classe Libro
 class Libro{
+    #id;
+    #titolo;
+    #autore;
+    #nPagine;
+    #isLetto;
     constructor(id, titolo, autore, nPagine, isLetto){
-    this.id = id;
-    this.titolo = titolo;
-    this.autore = autore;
-    this.nPagine = nPagine;
+    this.#id = id;
+    this.#titolo = titolo;
+    this.#autore = autore;
+    this.#nPagine = nPagine;
     if(isLetto){
-        this.isLetto = "Sì"
+        this.#isLetto = "Sì"
     }else{
-        this.isLetto ="No";
+        this.#isLetto ="No";
     }
+   
     }
+    //getter e setter
+    get id(){
+        return this.#id;
+    }
+    set id(newId){
+        this.#id = newId;
+    }
+    get titolo(){
+        return this.#titolo;
+    }
+    set titolo(newTitolo){
+        this.#titolo = newTitolo;
+    }
+    get autore(){
+        return this.#autore;
+    }
+    set autore(newAutore){
+        this.#autore = newAutore;
+    }
+    get nPagine(){
+        return this.#nPagine;
+    }
+
+    set nPagine(newNumero){
+        this.#nPagine = newNumero;
+    }
+
+    get isLetto(){
+        return this.#isLetto;
+    }
+
+    set isLetto(newStatus){
+        this.#isLetto = newStatus;
+    }
+
+
+
     
 }
 
@@ -39,11 +82,22 @@ const domHandler = (function(){
             let contenitore = document.createElement("div");
             contenitore.classList.add("bookContainer");
             tabellaLibri.appendChild(contenitore);
-            for(let dato in libro){
-                let elemento = document.createElement("p");
-                elemento.textContent = libro[dato];
-                contenitore.appendChild(elemento);
-                }
+            let elemento = document.createElement("p");
+            elemento.textContent = libro.id;
+            contenitore.appendChild(elemento);
+            elemento = document.createElement("p");
+            elemento.textContent = libro.titolo;
+            contenitore.appendChild(elemento);
+            elemento = document.createElement("p");
+            elemento.textContent = libro.autore;
+            contenitore.appendChild(elemento);
+            elemento = document.createElement("p");
+            elemento.textContent = libro.nPagine;
+            contenitore.appendChild(elemento);
+            elemento = document.createElement("p");
+            elemento.textContent = libro.isLetto;
+            contenitore.appendChild(elemento);
+                
             
         let read = document.createElement("img");
         if(libro.isLetto === "No"){
