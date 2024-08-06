@@ -59,6 +59,38 @@ class Libro{
 
 
 
+
+
+
+
+
+
+const elencoLibri = (function (){
+    
+    let libreria = [];
+    
+    function aggiungiLibro(libro){
+        libreria.push(libro);
+        
+            }
+
+    function getLibreria(){
+        return libreria;
+    }      
+
+    function setLibreria(newLibreria){
+        libreria = newLibreria;
+    }
+        
+    return {aggiungiLibro, getLibreria, setLibreria};        
+        
+    
+
+
+})();
+
+
+
 const domHandler = (function(){
     //elementi del Dom
     const tabellaLibri = document.querySelector(".tableContainer");
@@ -135,6 +167,7 @@ const domHandler = (function(){
             inputAutore.value="";
             inputPagine.value="";
             console.log(dialog.returnValue);
+            mostraLibri();
         }else{
             form.reset();
         }
@@ -202,6 +235,13 @@ const domHandler = (function(){
         mostraLibri();
         
     });
+    const divinaCommedia = new Libro( "A001", "La Divina Commedia", "Dante Alighieri", 700, true);
+
+    const braveNewWorld = new Libro( "A002", "Brave New World", "Aldous Huxley", 400, false);
+
+    elencoLibri.aggiungiLibro(divinaCommedia);
+    elencoLibri.aggiungiLibro(braveNewWorld);
+    mostraLibri();
 
     return{mostraLibri};
 })();
@@ -211,49 +251,9 @@ const domHandler = (function(){
 
 
 
-const elencoLibri = (function (){
-    
-    let libreria = [];
-    
-    function aggiungiLibro(libro){
-        libreria.push(libro);
-        domHandler.mostraLibri();
-            }
-
-    function getLibreria(){
-        return libreria;
-    }      
-
-    function setLibreria(newLibreria){
-        libreria = newLibreria;
-    }
-        
-    return {aggiungiLibro, getLibreria, setLibreria};        
-        
-    
-
-
-})();
 
 
 
-
-
-
-
-
-
-
-
-const divinaCommedia = new Libro( "A001", "La Divina Commedia", "Dante Alighieri", 700, true);
-
-const braveNewWorld = new Libro( "A002", "Brave New World", "Aldous Huxley", 400, false);
-
-elencoLibri.aggiungiLibro(divinaCommedia);
-elencoLibri.aggiungiLibro(braveNewWorld);
-
-
-domHandler.mostraLibri();
 
 
 
